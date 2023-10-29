@@ -6,6 +6,7 @@ const web = require('./routes/web')
 const connectdb = require('./db/connectdb')
 const fileUpload = require("express-fileupload");
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
 
 
 app.use(cors())// for api communication
