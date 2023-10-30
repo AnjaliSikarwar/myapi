@@ -102,16 +102,16 @@ class UserController{
     static updatePassword = async (req, res) => {
         // console.log(req.user)
         try {
-            const { oldPassword, newPassword, confirmPassword } = req.body
+            const { oldPassword, newPassword, confirmpassword } = req.body
 
-            if (oldPassword && newPassword && confirmPassword) {
+            if (oldPassword && newPassword && confirmpassword) {
                 const user = await UserModel.findById(req.user.id);
                 const isMatch = await bcrypt.compare(oldPassword, user.password)
                 //const isPasswordMatched = await userModel.comparePassword(req.body.oldPassword);
                 if (!isMatch) {
                     res.send({ "status": 400, "message": "Old password is incorrect" })
                 } else {
-                    if (newPassword !== confirmPassword) {
+                    if (newPassword !== confirmpassword) {
                         res.send({ "status": "failed", "message": "password does not match" })
                     } else {
                         const salt = await bcrypt.genSalt(10)
