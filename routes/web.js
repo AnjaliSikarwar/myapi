@@ -3,6 +3,7 @@ const UserController = require('../controllers/UserController')
 const router = express.Router()
 
 
+
 //usercontroller
 router.get('/getalluser',UserController.getalluser)
 router.post('/userinsert',UserController.userinsert)

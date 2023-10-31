@@ -1,5 +1,6 @@
 const UserModel = require('../models/User')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
