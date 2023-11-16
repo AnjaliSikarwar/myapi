@@ -16,22 +16,22 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     
-    confirmpassword: {
+    cpassword: {
         type: String,
         required: true,
     },
-    oldPassword: {
+    oldpassword: {
         type: String,
         required: true,
     },
-    newPassword: {
+    newpassword: {
         type: String,
         required: true,
     },
    
     role: {
         type: String,
-        default: 'student',
+        default: 'user',
     },
     image: {
         public_id: {
